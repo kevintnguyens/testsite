@@ -19,6 +19,13 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-watch": "^4.3.5",
     "path": "^0.12.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevintnguyens/testsite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevintnguyens/testsite/issues"
+  },
+  "homepage": "https://github.com/kevintnguyens/testsite#readme"
 }
-
