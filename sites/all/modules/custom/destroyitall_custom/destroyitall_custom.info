@@ -1,0 +1,4 @@
+name = destroyitall Custom Code
+description = Custom Code for the destroyitall site.
+package = destroyitall
+core = 7.x

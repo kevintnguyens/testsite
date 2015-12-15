@@ -1,0 +1,267 @@
+/**
+ * @file
+ * RTL companion for the responsive-sidebars.css file.
+ */
+
+@-ms-viewport {
+  width: device-width;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.visible-phone {
+  display: none !important;
+}
+
+.visible-tablet {
+  display: none !important;
+}
+
+.hidden-desktop {
+  display: none !important;
+}
+
+.visible-desktop {
+  display: inherit !important;
+}
+
+.sidebar-first {
+  #content {
+    float: right;
+    width: (100% - @width-first-second);
+    margin-right: @width-first-second;
+    margin-left: -100%;
+  }
+  .region-sidebar-first {
+    float: right;
+    width: @width-first-second;
+    margin-right: 0%;
+    margin-left: (0 - @width-first-second);
+  }
+}
+
+.sidebar-second {
+  #content {
+    float: right;
+    width: (100% - @width-sidebar-second);
+    margin-right: 0%;
+    margin-left: (-100% + @width-sidebar-second);
+  }
+  .region-sidebar-second {
+    float: right;
+    width: @width-sidebar-second;
+    margin-right: (100% - @width-sidebar-second);
+    margin-left: -100%;
+  }
+}
+
+.two-sidebars {
+  #content {
+    float: right;
+    width: (100% - (@width-first-second + @width-sidebar-second));
+    margin-right: @width-first-second;
+    margin-left: (-100% + @width-sidebar-second);
+  }
+  .region-sidebar-first {
+    float: right;
+    width: @width-first-second;
+    margin-right: 0%;
+    margin-left: (0 - @width-first-second);
+  }
+  .region-sidebar-second {
+    float: right;
+    width: @width-sidebar-second;
+    margin-right: (100% - @width-sidebar-second);
+    margin-left: -100%;
+  }
+}
+
+// Tablet
+@media (min-width: 768px) and (max-width: 959px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important ;
+  }
+  .visible-tablet {
+    display: inherit !important;
+  }
+  .hidden-tablet {
+    display: none !important;
+  }
+
+  .sidebar-first {
+    #content {
+      float: right;
+      width: (100% - @width-tablet-sidebar-first);
+      margin-right: @width-tablet-sidebar-first;
+      margin-left: -100%;
+    }
+    .region-sidebar-first {
+      float: right;
+      width: @width-tablet-sidebar-first;
+      margin-right: 0%;
+      margin-left: (0 - @width-tablet-sidebar-first);
+    }
+  }
+
+  .sidebar-second {
+    #content {
+      float: right;
+      width: (100% - @width-tablet-sidebar-second);
+      margin-right: 0%;
+      margin-left: (-100% + @width-tablet-sidebar-second);
+    }
+    .region-sidebar-second {
+      float: right;
+      width: @width-sidebar-second;
+      margin-right: (100% - @width-tablet-sidebar-second);
+      margin-left: -100%;
+    }
+  }
+
+  .two-sidebars {
+    #content {
+      float: right;
+      width: (100% - @width-tablet-sidebar-second);
+      margin-right: @width-tablet-sidebar-first;
+      margin-left: -100%;
+    }
+    .region-sidebar-first {
+      float: right;
+      width: @width-tablet-sidebar-first;
+      margin-right: 0%;
+      margin-left: (0 - @width-tablet-sidebar-first);
+    }
+    .region-sidebar-second {
+      float: right;
+      width: 100%;
+      margin-right: 0%;
+      margin-left: -100%;
+      padding-left: 0;
+      padding-right: 0;
+      clear: right;
+
+      .lt-ie8 & {
+        position: relative;
+        zoom: 1;
+      }
+
+      &:before,
+      &:after {
+        content: "";
+        display: table;
+      }
+
+      &:after {
+        clear: both;
+      }
+
+      .block {
+        padding-left: 10px;
+        padding-right: 10px;
+        .box-sizing(border-box);
+        word-wrap: break-word;
+
+        .lt-ie7 & {
+          display: inline;
+          overflow: hidden;
+          overflow-y: visible;
+        }
+
+        &:nth-child(3n+1) {
+          float: right;
+          width: @width-tablet-sidebar-second;
+          margin-right: 0%;
+          margin-left: (0 - @width-tablet-sidebar-second);
+          clear: right;
+        }
+
+        &:nth-child(3n+2) {
+          float: right;
+          width: @width-tablet-sidebar-second;
+          margin-right: @width-tablet-sidebar-second;
+          margin-left: (-100% + @width-tablet-sidebar-second);
+        }
+
+        &:nth-child(3n) {
+          float: right;
+          width: @width-tablet-sidebar-second;
+          margin-right: (100% - @width-tablet-sidebar-second);
+          margin-left: -100%;
+        }
+      }
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 767px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important;
+  }
+  .visible-phone {
+    display: inherit !important;
+  }
+  .hidden-phone {
+    display: none !important;
+  }
+
+  .sidebar-first {
+    #content {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .region-sidebar-first {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .sidebar-second {
+    #content {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .region-sidebar-second {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .two-sidebars {
+    #content {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .region-sidebar-first {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .region-sidebar-second {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

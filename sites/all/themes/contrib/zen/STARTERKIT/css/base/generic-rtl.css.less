@@ -1,0 +1,34 @@
+/**
+ * @file
+ * RTL companion for the generic.css file.
+ */
+
+// lists
+ul li.collapsed {
+  list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHAQMAAAD+nMWQAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAABNJREFUCB1j4GASYFJgcmD+A4IADUIDfIUMT4wAAAAASUVORK5CYII=');
+  
+  .lt-ie8 & {
+    list-style-image: url('../images/menu-collapsed-rtl.png');
+  }
+}
+
+// Admin Tabs
+ul.primary li,
+ul.secondary li {
+  float: right;
+}
+
+ul.primary li {
+  margin: 0.5em 3px 0 0;
+}
+
+// Inline lists
+ul.inline li {
+  .inline-block();
+  padding: 0 0 0 1em;
+}
+
+// Fields
+span.field-label {
+  padding: 0 0 0 1em;
+}

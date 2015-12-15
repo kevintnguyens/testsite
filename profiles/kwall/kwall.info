@@ -1,0 +1,135 @@
+name = KWALL
+description = Standard KWALL starter profile.
+core = 7.x
+distribution_name = KWALL
+
+; Install necessary core modules.
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+;dependencies[] = toolbar
+dependencies[] = help
+dependencies[] = php
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = trigger
+
+; Basic Modules
+dependencies[] = jquery_update
+dependencies[] = entity
+dependencies[] = entity_token
+dependencies[] = token
+dependencies[] = rules
+dependencies[] = rules_admin
+dependencies[] = extlink
+dependencies[] = libraries
+dependencies[] = advanced_help
+dependencies[] = ctools
+dependencies[] = admin_views
+dependencies[] = backup_migrate
+;dependencies[] = nodeblock
+dependencies[] = block_class
+dependencies[] = flood_control
+dependencies[] = masquerade
+dependencies[] = pathologic
+dependencies[] = favicon
+dependencies[] = touch_icons
+dependencies[] = variable
+dependencies[] = variable_email
+dependencies[] = backports
+dependencies[] = speedboxes
+dependencies[] = logintoboggan
+dependencies[] = navbar
+dependencies[] = bean
+
+; Menu
+dependencies[] = menu_block
+dependencies[] = menu_position
+dependencies[] = superfish
+
+; Fields
+dependencies[] = viewfield
+dependencies[] = entityreference
+dependencies[] = field_group
+dependencies[] = options_element
+dependencies[] = title
+
+; Input Filters
+dependencies[] = ckeditor
+dependencies[] = imce
+
+; Messaging
+dependencies[] = absolute_messages
+
+; Views
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = views_data_export
+dependencies[] = views_php
+dependencies[] = views_ui
+dependencies[] = views_slideshow
+
+; Javascript
+dependencies[] = colorbox
+dependencies[] = jquery_placeholder
+
+; Date
+dependencies[] = date
+dependencies[] = date_all_day
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = date_views
+
+; Media
+dependencies[] = media
+dependencies[] = media_internet
+dependencies[] = file_entity
+dependencies[] = transliteration
+
+; SEO
+dependencies[] = globalredirect
+dependencies[] = googleanalytics
+dependencies[] = xmlsitemap
+dependencies[] = xmlsitemap_custom
+dependencies[] = xmlsitemap_engines
+dependencies[] = xmlsitemap_menu
+dependencies[] = xmlsitemap_node
+dependencies[] = redirect
+dependencies[] = pathauto
+dependencies[] = metatag
+dependencies[] = metatag_opengraph
+
+; Spam
+dependencies[] = captcha
+dependencies[] = recaptcha
+
+; Mail
+dependencies[] = mailsystem
+dependencies[] = mimemail
+dependencies[] = mimemail_action
+dependencies[] = mimemail_compress
+dependencies[] = smtp
+
+; Development
+dependencies[] = devel
+dependencies[] = features
+dependencies[] = strongarm
+
+; Theming
+dependencies[] = elements
+dependencies[] = fences
+dependencies[] = html5_tools
+dependencies[] = css_injector
+dependencies[] = less

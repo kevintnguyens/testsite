@@ -1,0 +1,18 @@
+screenshot  = screenshot.png
+name        = KWALL Admin Theme
+description = A responsive administration theme.
+
+core        = 7.x
+base theme  = ember
+
+stylesheets[all][] = css/styles.css.less
+;scripts[] = js/script.js
+
+; Regions
+regions[content] = Content
+regions[help] = Help
+regions[messages] = Messages
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[sidebar_first] = First sidebar
+regions_hidden[] = sidebar_first

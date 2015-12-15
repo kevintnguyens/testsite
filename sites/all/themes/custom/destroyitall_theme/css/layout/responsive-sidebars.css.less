@@ -1,0 +1,313 @@
+/**
+ * @file
+ * Positioning for responsive layout
+ */
+
+@-ms-viewport {
+  width: device-width;
+}
+
+// Full width Elements
+#page,
+.region-bottom {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: @width-page;
+}
+
+// Add padding, etc.
+#header,
+#content,
+#navigation,
+.region-sidebar-first,
+.region-sidebar-second,
+#footer {
+  padding-left: 10px;
+  padding-right: 10px;
+  .box-sizing(border-box);
+  word-wrap: break-word;
+
+  .lt-ie7 & {
+    display: inline;
+    overflow: hidden;
+    overflow-y: visible;
+  }
+}
+#header,
+#main,
+#footer {
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .lt-ie8 & {
+    position: relative;
+    zoom: 1;
+  }
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.visible-phone {
+  display: none !important;
+}
+
+.visible-tablet {
+  display: none !important;
+}
+
+.hidden-desktop {
+  display: none !important;
+}
+
+.visible-desktop {
+  display: inherit !important;
+}
+
+.sidebar-first {
+  #content {
+    float: left;
+    width: (100% - @width-sidebar-first);
+    margin-left: @width-sidebar-first;
+    margin-right: -100%;
+  }
+  .region-sidebar-first {
+    float: left;
+    width: @width-sidebar-first;
+    margin-left: 0%;
+    margin-right: (0 - @width-sidebar-first);
+  }
+}
+
+.sidebar-second {
+  #content {
+    float: left;
+    width: (100% - @width-sidebar-second);
+    margin-left: 0%;
+    margin-right: (-100% + @width-sidebar-second);
+  }
+  .region-sidebar-second {
+    float: left;
+    width: @width-sidebar-second;
+    margin-left: (100% - @width-sidebar-second);
+    margin-right: -100%;
+  }
+}
+
+.two-sidebars {
+  #content {
+    float: left;
+    width: (100% - (@width-sidebar-first + @width-sidebar-second));
+    margin-left: @width-sidebar-first;
+    margin-right: (-100% + @width-sidebar-second);
+  }
+  .region-sidebar-first {
+    float: left;
+    width: @width-sidebar-first;
+    margin-left: 0%;
+    margin-right: (0 - @width-sidebar-first);
+  }
+  .region-sidebar-second {
+    float: left;
+    width: @width-sidebar-second;
+    margin-left: (100% - @width-sidebar-second);
+    margin-right: -100%;
+  }
+}
+
+// Tablet
+@media (min-width: 768px) and (max-width: 959px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important ;
+  }
+  .visible-tablet {
+    display: inherit !important;
+  }
+  .hidden-tablet {
+    display: none !important;
+  }
+
+  .sidebar-first {
+    #content {
+      float: left;
+      width: (100% - @width-tablet-sidebar-first);
+      margin-left: @width-tablet-sidebar-first;
+      margin-right: -100%;
+    }
+    .region-sidebar-first {
+      float: left;
+      width: @width-tablet-sidebar-first;
+      margin-left: 0%;
+      margin-right: (0 - @width-tablet-sidebar-first);
+    }
+  }
+
+  .sidebar-second {
+    #content {
+      float: left;
+      width: (100% - @width-tablet-sidebar-second);
+      margin-left: 0%;
+      margin-right: (-100% + @width-tablet-sidebar-second);
+    }
+    .region-sidebar-second {
+      float: left;
+      width: @width-sidebar-second;
+      margin-left: (100% - @width-tablet-sidebar-second);
+      margin-right: -100%;
+    }
+  }
+
+  .two-sidebars {
+    #content {
+      float: left;
+      width: (100% - @width-tablet-sidebar-second);
+      margin-left: @width-tablet-sidebar-first;
+      margin-right: -100%;
+    }
+    .region-sidebar-first {
+      float: left;
+      width: @width-tablet-sidebar-first;
+      margin-left: 0%;
+      margin-right: (0 - @width-tablet-sidebar-first);
+    }
+    .region-sidebar-second {
+      float: left;
+      width: 100%;
+      margin-left: 0%;
+      margin-right: -100%;
+      padding-left: 0;
+      padding-right: 0;
+      clear: left;
+
+      .lt-ie8 & {
+        position: relative;
+        zoom: 1;
+      }
+
+      &:before,
+      &:after {
+        content: "";
+        display: table;
+      }
+
+      &:after {
+        clear: both;
+      }
+
+      .block {
+        padding-left: 10px;
+        padding-right: 10px;
+        .box-sizing(border-box);
+        word-wrap: break-word;
+
+        .lt-ie7 & {
+          display: inline;
+          overflow: hidden;
+          overflow-y: visible;
+        }
+
+        &:nth-child(3n+1) {
+          float: left;
+          width: @width-tablet-sidebar-second;
+          margin-left: 0%;
+          margin-right: (0 - @width-tablet-sidebar-second);
+          clear: left;
+        }
+
+        &:nth-child(3n+2) {
+          float: left;
+          width: @width-tablet-sidebar-second;
+          margin-left: @width-tablet-sidebar-second;
+          margin-right: (-100% + @width-tablet-sidebar-second);
+          clear: left;
+        }
+
+        &:nth-child(3n) {
+          float: left;
+          width: @width-tablet-sidebar-second;
+          margin-left: (100% - @width-tablet-sidebar-second);
+          margin-right: -100%;
+        }
+      }
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 767px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important;
+  }
+  .visible-phone {
+    display: inherit !important;
+  }
+  .hidden-phone {
+    display: none !important;
+  }
+
+  .sidebar-first {
+    #content {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .region-sidebar-first {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .sidebar-second {
+    #content {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .region-sidebar-second {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .two-sidebars {
+    #content {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .region-sidebar-first {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .region-sidebar-second {
+      float: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

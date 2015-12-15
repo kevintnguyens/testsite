@@ -1,0 +1,125 @@
+/**
+ * @file
+ * Region-Block-block Styles
+ * EX: .header-logo-block
+ */
+
+// Fix double contextual links where they get rendered once for the block
+// contextual links and then again for the view mode of the block node
+.block-nodeblock > .contextual-links-wrapper + .node > .contextual-links-wrapper {
+  display: none;
+}
+
+#block-user-login,
+#login-form,
+#user-register-form {
+  label {
+    text-align: left;
+  }
+  ul {
+    list-style: none;
+    li {
+      margin-left: 0;
+    }
+  }
+}
+
+.header-logo-block {
+}
+
+.footer-copyright-block {
+}
+.toboggan-unified {
+  #login-message {
+    text-align: left;
+  }
+  #login-links {
+    text-align: left;
+    a {
+      &:hover {
+        color: #555;
+      }
+    }
+    a.lt-active {
+      background-color: @color-main-nav-bkg;
+      &:hover {
+        background-color: @color-main-nav-bkg-hover;
+        color: #ccc;
+      }
+    }
+  }
+}
+
+.main-menu-block {
+  display: block;
+  width: 100%;
+
+   > .sf-item-1 a {
+    display: block;
+    padding: 5px 10px;
+  }
+}
+
+.block-superfish {
+  display: inline-block;
+  width: auto;
+  .sf-menu li a {
+    background: #AAA;
+    padding: 10px 20px;
+
+    &:hover {
+      background: #666;
+    }
+  }
+}
+
+.logo-block {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+// Tablet
+@media (min-width: 768px) and (max-width: 959px) {
+}
+
+// Mobile
+@media (max-width: 767px) {
+}
+
+// sidebar menu block
+.sidebar-menu-block {
+  display: none;
+}
+
+/*
+// related links menu block (sidebar)
+.related-links-menu-block {
+  max-width: 255px;
+  background: @color-usc-light-grey;
+  color: @color-usc-red;
+  cursor: pointer;
+    ul {
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    li {
+      list-style: none;
+      padding:10px 20px;
+      width: 255px;
+      border-bottom: 2px solid #fff;
+      font-family: @font-family-bold;
+      &::after {
+        content: "\f054";
+        font-family: @font-awesome;
+        font-size: 0.6em;
+        float: right;
+      }
+      &:hover{
+        background: @color-usc-medium-grey;
+        width: 255px;
+      }
+    }
+  }
+}
+*/

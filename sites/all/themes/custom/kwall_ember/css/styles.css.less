@@ -1,0 +1,86 @@
+.box-margin {
+  clear: both;
+}
+
+tr,
+tr.odd,
+tr.event {
+  &:hover {
+    background-color: fade(black, 10);
+  }
+}
+
+span.ok,
+tr.ok {
+  background: #82BB41;
+  color: black;
+}
+
+span.error,
+tr.error {
+  background: #CB2026;
+  color: black;
+}
+
+span.warning,
+tr.warning {
+  background: #F79521;
+  color: black;
+}
+
+.ajax-progress {
+  display: block;
+
+  .throbber {
+    display: block;
+    margin: 0;
+    font: 35px/54px 'spinjs';
+    background: transparent;
+
+    .spinner {
+      left: 1em !important;
+      top: .5em !important;
+    }
+  }
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  background: #808080;
+  border-radius: 5px;
+}
+
+#edit-options .collapsible {
+  float: none;
+}
+
+.krumo-root li {
+  max-width: none;
+}
+
+/* on these forms/pages make column 4 widest */
+form#system-modules th:nth-child(4),
+form#system-modules td:nth-child(4) {
+  width: auto;
+  min-width: 0;
+}
+
+html.js .collapsed {
+  height: auto;
+}
+
+.views-ui-display-tab-bucket .advanced-help-link {
+  z-index: 100;
+  position: relative;
+}
+.node-event-form .field-widget-urlwidget .form-item-field-link-und-0-title .description {
+    display: none;
+}
+
+[dir="ltr"] {
+  fieldset {
+    padding:0px;
+  }
+  .indentation {
+    float:left;
+  }
+}

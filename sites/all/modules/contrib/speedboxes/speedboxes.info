@@ -1,0 +1,10 @@
+name = Speedboxes
+description = Drupal module implementation of the Speedbox JavaScript.
+core = 7.x
+package = Tools
+; Information added by drupal.org packaging script on 2012-11-13
+version = "7.x-1.2"
+core = "7.x"
+project = "speedboxes"
+datestamp = "1352824983"
+
