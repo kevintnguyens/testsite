@@ -10,7 +10,10 @@
  * @ingroup views_templates
  */
 ?>
+<?php
+  echo ("ok");
 
+?>
 
 <?php if (!empty($title)) : ?>
   <h3><?php print $title; ?></h3>
