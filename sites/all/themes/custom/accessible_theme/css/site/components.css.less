@@ -4,3 +4,241 @@
   &--component-modifier {
   }
 }
+
+// Buttons
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+button,
+.button {
+  color: @color-button-text;
+  background-color: @color-button-bkg;
+  border-radius: 5px;
+  padding: 5px 30px;
+  border: none;
+//  .button-animate('wayra');
+  &:hover {
+    background: #9b9b9b;
+    color: #fff;
+  }
+  &:active {
+    background: #9b9b9b;
+    color: #fff;
+  }
+  &:disabled {
+    background: #cccccc;
+    color: #9b9b9b;
+    opacity: .5;
+  }
+  &.initial {
+    background: #ccc;
+    color: #4a4a4a;
+    &.primary {
+      background:#15214D;
+      color: #fff;
+    }
+    &.secondary {
+      background: #648A3B;
+      color: #fff;
+    }
+    &.rounded {
+      border-radius: 40px;
+      background: #15214d;
+      color: #fff;
+    }
+    &.outline {
+      background: none;
+      border: 2px solid #15214d;
+      color: #15214d;
+    }
+  }
+  &.hover {
+    background: #9b9b9b;
+    color: #fff;
+    &.primary {
+      background: #005794;
+    }
+    &.secondary {
+      background:#74B243;
+    }
+    &.rounded {
+      border-radius: 40px;
+      background: #005794;
+      color: #fff;
+    }
+    &.outline {
+      background: none;
+      border: 2px solid #005794;
+      color: #005794;
+    }
+  }
+  &.active {
+    background: #9b9b9b;
+    color: #fff;
+    &.primary {
+      background: #005794;
+    }
+    &.secondary {
+      background:#648A3B;
+    }
+    &.rounded {
+      border-radius: 40px;
+      background: #005794;
+      color: #fff;
+    }
+    &.outline {
+      background: none;
+      border: 2px solid #15214d;
+      color: #15214d;
+    }
+  }
+
+}
+
+
+/* Button Animations
+ * Button animations are based from http://tympanus.net/Development/ButtonStylesInspiration/
+ * Some of the styles contain spans of which cannot create as standard buttons unless we build a javascipt solution.
+ *
+ */
+.button-animate(@style) when (default()) {
+  .button-animate('ujarak');
+}
+
+.button-animate(@style) when (@style = 'ujarak') {
+  color: #37474f;
+  border: 1px solid;
+  border-color: #37474f;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  -webkit-transition: border-color 0.4s, color 0.4s;
+  transition: border-color 0.4s, color 0.4s;
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 1em;
+  padding: 1em 2em;
+  width: 130px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #37474f;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transform: scale3d(0.7, 1, 1);
+    transform: scale3d(0.7, 1, 1);
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+  &:hover {
+    color: #fff;
+    border-color: #37474f;
+    &:before {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+.button-animate(@style) when (@style = 'wayra') {
+  color: #37474f;
+  border: 3px solid;
+  border-color: #37474f;
+  overflow: hidden;
+  width: 245px;
+  -webkit-transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, color 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  min-width: 150px;
+  max-width: 250px;
+  display: block;
+  margin: 1em;
+  padding: 1em 2em;
+  border: none;
+  background: none;
+  color: inherit;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: #37474f;
+    z-index: -1;
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+  }
+  &:hover {
+    color: #fff;
+    border-color: #37474f;
+    &:before {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+ul.accordion {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  li {
+    margin:0;
+
+    &:before {
+      content: none;
+    }
+    &.active {
+      div {
+        display:block;
+      }
+    }
+    // tab title
+    div:first-child {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      display: block;
+      line-height: 3rem;
+      min-height: 3rem;
+      padding: 0 1rem;
+    }
+    div {
+      // tab content
+      border-bottom: 1px solid #ddd;
+      box-sizing: border-box;
+      display: none;
+
+      p {
+        margin: 0;
+        padding:2rem;
+      }
+    }
+  }
+
+
+  &.popout {
+    li.active {
+      box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+      margin: 16px 0;
+    }
+  }
+}

@@ -130,117 +130,6 @@ ul.pager {
 }
 
 
-
-// Buttons
-html input[type="button"],
-input[type="reset"],
-input[type="submit"],
-button,
-.button {
-  color: @color-button-text;
-  background-color: @color-button-bkg;
-  border-radius: 5px;
-  padding: 5px 30px;
-  border: none;
-  &:hover {
-    background: #9b9b9b;
-    color: #fff;
-  }
-  &:active {
-    background: #9b9b9b;
-    color: #fff;
-  }
-  &:disabled {
-    background: #cccccc;
-    color: #9b9b9b;
-    opacity: .5;
-  }
-  &.initial {
-    background: #ccc;
-    color: #4a4a4a;
-    &.primary {
-      background:#15214D;
-      color: #fff;
-    }
-    &.secondary {
-      background: #648A3B;
-      color: #fff;
-    }
-    &.rounded {
-      border-radius: 40px;
-      background: #15214d;
-      color: #fff;
-    }
-    &.outline {
-      background: none;
-      border: 2px solid #15214d;
-      color: #15214d;
-    }
-  }
-  &.hover {
-    background: #9b9b9b;
-    color: #fff;
-    &.primary {
-      background: #005794;
-    }
-    &.secondary {
-      background:#74B243;
-    }
-    &.rounded {
-      border-radius: 40px;
-      background: #005794;
-      color: #fff;
-    }
-    &.outline {
-      background: none;
-      border: 2px solid #005794;
-      color: #005794;
-    }
-  }
-  &.active {
-    background: #9b9b9b;
-    color: #fff;
-    &.primary {
-      background: #005794;
-    }
-    &.secondary {
-      background:#648A3B;
-    }
-    &.rounded {
-      border-radius: 40px;
-      background: #005794;
-      color: #fff;
-    }
-    &.outline {
-      background: none;
-      border: 2px solid #15214d;
-      color: #15214d;
-    }
-  }
-  &.disabled {
-    background: #cccccc;
-    color: #9b9b9b;
-    &.primary {
-      background:#15214D;
-    }
-    &.secondary {
-      background:#648A3B;
-    }
-    &.rounded {
-      border-radius: 40px;
-      background: #15214d;
-      color: #fff;
-    }
-    &.outline {
-      background: none;
-      border: 2px solid #15214d;
-      color: #15214d;
-    }
-    opacity: 0.5;
-  }
-}
-
-
 // Pagination
 ul.pagination {
   margin-top: 60px;
@@ -587,8 +476,12 @@ textarea {
   border: 1px solid @color-border;
 }
 
-label.option {
-  margin-left: 0.5rem;
+label {
+  margin-bottom: 1rem;
+  &.option {
+    margin-left: 0.5rem;
+    vertical-align: sub;
+  }
 }
 
 .ui-datepicker {
@@ -596,10 +489,44 @@ label.option {
   border-radius: 0;
 
   .ui-datepicker-header {
-    border-radius: 0;
+    border: none;
     background: #fff;
   }
   .ui-widget-content .ui-state-default {
     background: #fff;
   }
+}
+
+#ui-datepicker-div {
+  background: #fff;
+}
+
+.ui-datepicker-calendar {
+  tbody {
+    border: none;
+    .ui-widget-content {
+      &.ui-state-default {
+        background: #fff;
+        border: none;
+      }
+
+      &.ui-state-highlight {
+        background: #cc0000;
+      }
+    }
+  }
+}
+
+.select select {
+  background: #fff;
+  border: 1px solid @color-border;
+  min-width: 10rem;
+}
+.select:after {
+  border-top: 0.65rem solid;
+  border-right: .65rem solid transparent;
+  border-bottom: 0.65rem solid transparent;
+  border-left: 0.65rem solid transparent;
+  top: 68%;
+  margin-top: 0;
 }

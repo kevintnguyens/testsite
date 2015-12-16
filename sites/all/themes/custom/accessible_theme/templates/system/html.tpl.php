@@ -25,9 +25,11 @@
     <?php print $scripts; ?>
   </head>
   <body class="<?php print $classes; ?>" <?php print $body_attributes;?>>
-    <div id="skip-link">
-      <a href="#<?php print $skip_link_anchor; ?>" class="skip-link visually-hidden--focusable" role="link"><?php print $skip_link_text; ?></a>
-    </div>
+  <?php if (isset($skip_link_text) && isset($skip_link_anchor)): ?>
+    <p id="skip-link">
+      <a href="#<?php print $skip_link_anchor; ?>" class="element-invisible element-focusable"><?php print $skip_link_text; ?></a>
+    </p>
+  <?php endif; ?>
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>

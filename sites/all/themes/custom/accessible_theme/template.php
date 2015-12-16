@@ -50,12 +50,12 @@ function accessible_theme_preprocess_html(&$vars) {
   // HTML element attributes.
   $vars['html_attributes_array']['lang'] = $GLOBALS['language']->language;
   $vars['html_attributes_array']['dir'] = $GLOBALS['language']->direction ? 'rtl' : 'ltr';
-
+/*
   // Return early, so the maintenance page does not call any of the code below.
   if ($hook != 'html') {
     return;
   }
-
+*/
   // Update RDF Namespacing
   if (module_exists('rdf')) {
     // Adds RDF namespace prefix bindings in the form of an RDFa 1.1 prefix
@@ -938,4 +938,66 @@ function accessible_theme_preprocess_menu_link(&$variables, $hook) {
     }
   }
   $menu_link_classes = array_merge($extra_classes, $menu_link_classes);
+}
+
+/**
+ * Implements template_preprocess_THEME_HOOK().
+ */
+function accessible_theme_preprocess_webform_element(&$variables) {
+  $element = &$variables['element'];
+
+  // Ensure defaults.
+  $element += array(
+    '#title_display' => 'before',
+    '#wrapper_attributes' => array(),
+  );
+  $element['#wrapper_attributes'] += array(
+    'class' => array(),
+  );
+
+  // All elements using this for display only are given the "display" type.
+  if (isset($element['#format']) && $element['#format'] == 'html') {
+    $type = 'display';
+  }
+  else {
+    $type = ($element['#webform_component']['type'] == 'select' && isset($element['#type'])) ? $element['#type'] : $element['#webform_component']['type'];
+  }
+
+  // Convert the parents array into a string, excluding the "submitted" wrapper.
+  $nested_level = $element['#parents'][0] == 'submitted' ? 1 : 0;
+  $parents = str_replace('_', '-', implode('--', array_slice($element['#parents'], $nested_level)));
+
+  // Build up a list of classes to apply on the element wrapper.
+  $wrapper_classes = array(
+    'form-item',
+    'webform-component',
+    'webform-component-' . str_replace('_', '-', $type),
+    'webform-component--' . $parents,
+  );
+  if($type == "select") {
+    $wrapper_classes[] = "select";
+  }
+  if (isset($element['#title_display']) && strcmp($element['#title_display'], 'inline') === 0) {
+    $wrapper_classes[] = 'webform-container-inline';
+  }
+  $element['#wrapper_attributes']['class'] = array_merge($element['#wrapper_attributes']['class'], $wrapper_classes);
+
+  // If #title_display is none, set it to invisible instead - none only used if
+  // we have no title at all to use.
+  if ($element['#title_display'] == 'none') {
+    $element['#title_display'] = 'invisible';
+    if (empty($element['#attributes']['title']) && !empty($element['#title'])) {
+      $element['#attributes']['title'] = $element['#title'];
+    }
+  }
+
+  // If #title is not set, we don't display any label or required marker.
+  if (!isset($element['#title'])) {
+    $element['#title_display'] = 'none';
+  }
+
+  // If an internal title is being used, generate no external title.
+  if ($element['#title_display'] == 'internal') {
+    $element['#title_display'] = 'none';
+  }
 }

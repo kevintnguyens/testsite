@@ -40,3 +40,87 @@
     }
   }
 }
+
+//Calendar View
+.view-calendar {
+  .view-header {
+    .date-heading {
+      font-size:22px;
+      color:#000000;
+      line-height:26px;
+      text-align:center;
+    }
+    .pager {
+      text-align: justify;
+      li {
+        background: none;
+        a {
+          border: none;
+          margin-left: 0;
+          margin-right: 0;
+          font-size: 16px;
+          color: #9B9B9B;
+          line-height: 24px;
+          text-align: left;
+          text-transform: uppercase;
+        }
+      }
+      .date-prev {
+        left: 0;
+        margin-left: 0;
+        right:auto;
+      }
+    }
+  }
+  .month-view .full {
+    thead {
+      tr {
+        th.days {
+          color:#9B9B9B;
+          font-weight: normal;
+          line-height: 40px;
+          text-transform: uppercase;
+        }
+      }
+    }
+    tbody {
+      tr.date-box {
+        td {
+          &.date-box {
+            color: #9B9B9B;
+            font-family: @font-family-bold;
+            padding: 5px;
+          }
+          &.empty {
+            .day {
+              color:#9B9B9B;
+              font-family: @font-family;
+            }
+          }
+        }
+      }
+      td.multi-day {
+        a {
+          color: #fff;
+        }
+        div.monthview {
+          background: #4A90E2;
+          -moz-border-radius: 0;
+          border-radius: 0;
+          height: 2.5em;
+        }
+      }
+      td.single-day {
+        a {
+          color: #000;
+        }
+        div.monthview {
+          background: #4A90E2;
+          .views-field-title {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

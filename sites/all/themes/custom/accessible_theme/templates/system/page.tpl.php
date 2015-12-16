@@ -8,7 +8,7 @@
  */
 ?>
 
-<!--<div id="page">
+<div id="page">
 
 <?php if ($page['header']): ?>
   <header id="header" role="banner">
@@ -85,74 +85,4 @@
 
 </div>
 </div>
-<?php print render($page['bottom']); ?>-->
-
-<div id="page">
-
-  <header id="header" role="banner">
-    <?php print render($page['header']); ?>
-  </header>
-
-  <div id="navigation" class="clearfix">
-    <div class="navigation-wrapper">
-      <?php print render($page['navigation']); ?>
-    </div>
-  </div><!-- /#navigation -->
-
-	<div class="highlighted-wrapper">
-  	<?php print render($page['highlighted']); ?>
-	</div><!-- /.highlighted-wrapper -->
-
-  <div id="title-wrapper">
-    <?php print render($page['page_title']); ?>
-  </div><!-- /#title-wrapper -->
-
-  <div id="main">
-    <div id="content" class="column" role="main">
-      <?php print $breadcrumb; ?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-<!--
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
--->
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php print render($tabs); ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
-    </div><!-- /#content -->
-
-    <?php
-      // Render the sidebars to see if there's anything in them.
-      $sidebar_first  = render($page['sidebar_first']);
-      $sidebar_second = render($page['sidebar_second']);
-    ?>
-
-    <?php if ($sidebar_first || $sidebar_second): ?>
-      <aside class="sidebars">
-        <?php print $sidebar_first; ?>
-        <?php print $sidebar_second; ?>
-      </aside><!-- /.sidebars -->
-    <?php endif; ?>
-
-  </div><!-- /#main -->
-
-</div><!-- /#page -->
-
-<div class="content-bottom">
-  <div class="content-bottom-inner">
-    <?php print render($page['bottom_content']); ?>
-  </div>
-</div><!-- /.content-bottom -->
-
-<div class="footer-wrapper">
-  <?php print render($page['footer']); ?>
-
-  <?php print render($page['bottom']); ?>
-</div><!-- /.footer-wrapper -->
+<?php print render($page['bottom']); ?>
