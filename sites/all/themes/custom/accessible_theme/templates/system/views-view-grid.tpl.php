@@ -18,7 +18,7 @@
 <?php if (!empty($title)) : ?>
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
-<table class="<?php print $class; ?>"<?php print $attributes; ?>>
+<table class="<?php print "Grid"; ?>"<?php print $attributes; ?>>
   <?php if (!empty($caption)) : ?>
     <caption><?php print $caption; ?></caption>
   <?php endif; ?>
