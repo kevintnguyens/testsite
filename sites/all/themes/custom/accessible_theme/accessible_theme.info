@@ -1,0 +1,30 @@
+name = Accessible Theme
+description = Lightweight Responsive Ready HTML5 Accessible base theme
+core = 7.x
+engine = phptemplate
+
+; Stylesheets
+stylesheets[all][] = fonts/stylesheet.css
+stylesheets[all][] = css/styles.css.less
+
+; Regions
+regions[header]         = Header
+regions[navigation]     = Navigation bar
+regions[highlighted]    = Highlighted
+regions[help]           = Help
+regions[content]        = Content
+regions[sidebar_first]  = First sidebar
+regions[sidebar_second] = Second sidebar
+regions[footer]         = Footer
+regions[bottom]         = Page bottom
+regions[page_top]       = Page top
+regions[page_bottom]    = Page bottom
+
+; Theme Settings
+settings[accessible_theme_breadcrumb]           = yes
+settings[accessible_theme_breadcrumb_separator] = ' › '
+settings[accessible_theme_breadcrumb_home]      = 1
+settings[accessible_theme_breadcrumb_trailing]  = 0
+settings[accessible_theme_breadcrumb_title]     = 0
+settings[accessible_theme_skip_link_anchor]     = main-menu
+settings[accessible_theme_skip_link_text]       = Jump to navigation
