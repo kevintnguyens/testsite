@@ -10,7 +10,7 @@
  * @ingroup views_templates
  */
 ?>
-<?php <h1> print('crap')</h1> ?>
+
 
 <?php if (!empty($title)) : ?>
   <h3><?php print $title; ?></h3>
